@@ -1,0 +1,11 @@
+{
+  "extends": ["config:recommended", ":disableDependencyDashboard"],
+  "enabledManagers": ["bundler", "github-actions"],
+  "labels": ["deps"],
+  "prHourlyLimit": 5,
+  "prConcurrentLimit": 10,
+  "semanticCommits": "enabled",
+  "semanticCommitType": "chore",
+  "semanticCommitScope": "deps",
+  "lockFileMaintenance": { "enabled": true, "schedule": ["monthly"] }
+}
