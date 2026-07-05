@@ -4,6 +4,17 @@ module VagrantK8s
   module Kubeconfig
     module_function
 
+    # Builds a kubectl command line from cluster config and per-call overrides.
+    #
+    # A namespace or context passed by the caller takes precedence over the
+    # `k8s` block, so provisioners can target a different context without
+    # forcing that override onto every other command.
+    #
+    # @param machine [Vagrant::Machine] Machine whose `k8s` config supplies defaults.
+    # @param extra_args [Array<String>] Arguments appended after the global flags.
+    # @param namespace [String, nil] Namespace override.
+    # @param context [String, nil] Context override.
+    # @return [Array<String>] Complete kubectl command line.
     def kubectl_command(machine, extra_args, namespace: nil, context: nil)
       config = machine.config.k8s
       command = [config.kubectl]

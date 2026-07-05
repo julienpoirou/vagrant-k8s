@@ -4,6 +4,32 @@ require 'open3'
 require_relative 'provisioner'
 
 module VagrantK8s
+  # Vagrant provisioner configuration for `helm upgrade --install`.
+  #
+  # @!attribute release
+  #   @return [String] Helm release name.
+  # @!attribute chart
+  #   @return [String] Chart reference, e.g. `repo/chart` or a local path.
+  # @!attribute repo
+  #   @return [String, nil] Chart repository URL, passed as `--repo`.
+  # @!attribute version
+  #   @return [String, nil] Chart version to install.
+  # @!attribute namespace
+  #   @return [String, nil] Target namespace; falls back to `k8s.namespace`.
+  # @!attribute values
+  #   @return [Array<String>] Values files, relative to the Vagrantfile.
+  # @!attribute set
+  #   @return [Hash] Individual values passed as repeated `--set key=value`.
+  # @!attribute wait
+  #   @return [Boolean] Whether to pass `--wait`.
+  # @!attribute atomic
+  #   @return [Boolean] Whether to roll back automatically on a failed install.
+  # @!attribute create_namespace
+  #   @return [Boolean] Whether to pass `--create-namespace`.
+  # @!attribute timeout
+  #   @return [String, nil] Helm timeout, e.g. `"5m"`.
+  # @!attribute helm
+  #   @return [String] Path to the helm executable.
   class HelmConfig < Vagrant.plugin('2', :config)
     attr_accessor :release, :chart, :repo, :version, :namespace, :values, :set, :wait, :atomic, :create_namespace,
                   :timeout, :helm

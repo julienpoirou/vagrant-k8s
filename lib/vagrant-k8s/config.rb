@@ -1,6 +1,16 @@
 # frozen_string_literal: true
 
 module VagrantK8s
+  # Vagrant configuration for connecting to a Kubernetes cluster.
+  #
+  # @!attribute kubeconfig
+  #   @return [String, nil] Path to the kubeconfig file, relative to the Vagrantfile.
+  # @!attribute context
+  #   @return [String, nil] Kubeconfig context used for kubectl and Helm commands.
+  # @!attribute namespace
+  #   @return [String, nil] Default namespace for kubectl and Helm commands.
+  # @!attribute kubectl
+  #   @return [String] Path to the kubectl executable.
   class Config < Vagrant.plugin('2', :config)
     attr_accessor :kubeconfig, :context, :namespace, :kubectl
 

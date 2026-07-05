@@ -3,6 +3,22 @@
 require_relative 'provisioner'
 
 module VagrantK8s
+  # Vagrant provisioner configuration for `kubectl apply -k`.
+  #
+  # @!attribute path
+  #   @return [String] Kustomization directory, relative to the Vagrantfile.
+  # @!attribute namespace
+  #   @return [String, nil] Target namespace; falls back to `k8s.namespace`.
+  # @!attribute prune
+  #   @return [Boolean] Whether to pass `--prune` (requires `prune_selector`).
+  # @!attribute prune_selector
+  #   @return [String, nil] Label selector passed to `--selector` when pruning.
+  # @!attribute server_side
+  #   @return [Boolean] Whether to pass `--server-side`.
+  # @!attribute force_conflicts
+  #   @return [Boolean] Whether to pass `--force-conflicts`.
+  # @!attribute wait
+  #   @return [Boolean] Whether to wait for pods to become ready after applying.
   class KustomizeConfig < Vagrant.plugin('2', :config)
     attr_accessor :path, :namespace, :prune, :prune_selector, :server_side, :force_conflicts, :wait
 

@@ -1,5 +1,14 @@
 # vagrant-k8s
 
+[![CI](https://github.com/julienpoirou/vagrant-k8s/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/julienpoirou/vagrant-k8s/actions/workflows/ci.yml)
+[![CodeQL](https://github.com/julienpoirou/vagrant-k8s/actions/workflows/codeql.yml/badge.svg)](https://github.com/julienpoirou/vagrant-k8s/actions/workflows/codeql.yml)
+[![Release](https://img.shields.io/github/v/release/julienpoirou/vagrant-k8s?include_prereleases&sort=semver)](https://github.com/julienpoirou/vagrant-k8s/releases)
+[![RubyGems](https://img.shields.io/gem/v/vagrant-k8s.svg)](https://rubygems.org/gems/vagrant-k8s)
+[![License](https://img.shields.io/github/license/julienpoirou/vagrant-k8s.svg)](LICENSE.md)
+[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-%23FE5196.svg)](https://www.conventionalcommits.org)
+[![Renovate](https://img.shields.io/badge/Renovate-enabled-brightgreen.svg)](https://renovatebot.com)
+[![Total downloads](https://img.shields.io/gem/dt/vagrant-k8s?logo=rubygems&label=downloads)](https://rubygems.org/gems/vagrant-k8s)
+
 Vagrant plugin to drive a Kubernetes cluster from the host machine, with Helm and Kustomize provisioners.
 
 See [the French documentation](README.fr.md) for the same content in French.
