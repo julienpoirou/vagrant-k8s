@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.2](https://github.com/julienpoirou/vagrant-k8s/compare/v0.2.1...v0.2.2) (2026-07-05)
+
+
+### Corrections 🐛
+
+* Keep lib/VERSION in sync via release-please's x-release-please-version annotation ([ab96e05](https://github.com/julienpoirou/vagrant-k8s/commit/ab96e0518b18657cf951815eed478da2f941b2c9))
+
 ## [0.2.1](https://github.com/julienpoirou/vagrant-k8s/compare/v0.2.0...v0.2.1) (2026-07-05)
 
 
