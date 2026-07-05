@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name        = 'vagrant-k8s'
-  spec.version     = File.read(File.join(__dir__, 'lib/vagrant-k8s/VERSION')).strip
+  spec.version     = File.read(File.join(__dir__, 'lib/vagrant-k8s/VERSION')).split('#').first.strip
   spec.summary     = 'Vagrant integration for Kubernetes with Helm and Kustomize provisioners'
   spec.description = 'Configures a Kubernetes cluster from a Vagrantfile and provides Helm and Kustomize provisioners.'
   spec.authors     = ['Julien Poirou']

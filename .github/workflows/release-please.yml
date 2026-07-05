@@ -14,31 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: googleapis/release-please-action@v5
-        id: release
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           config-file: .release-please-config.json
           manifest-file: .release-please-manifest.json
-
-      - uses: actions/checkout@v7
-        if: ${{ steps.release.outputs.release_created == 'true' }}
-        with:
-          ref: main
-
-      - name: Sync VERSION file to the released version
-        if: ${{ steps.release.outputs.release_created == 'true' }}
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          VERSION: ${{ steps.release.outputs.version }}
-        run: |
-          set -euo pipefail
-          echo "$VERSION" > lib/vagrant-k8s/VERSION
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add lib/vagrant-k8s/VERSION
-          if git diff --cached --quiet; then
-            echo "VERSION already up to date."
-            exit 0
-          fi
-          git commit -m "chore: sync VERSION to released ${VERSION}"
-          git push origin HEAD:main
