@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.1](https://github.com/julienpoirou/vagrant-k8s/compare/v0.2.0...v0.2.1) (2026-07-05)
+
+
+### Corrections 🐛
+
+* Verify VERSION sync after release-please tags a release ([9aea7cd](https://github.com/julienpoirou/vagrant-k8s/commit/9aea7cd02fcb4ec9b1ac47876691cbece1954e44))
+
 ## [0.2.0](https://github.com/julienpoirou/vagrant-k8s/compare/v0.1.4...v0.2.0) (2026-07-05)
 
 
